@@ -2,17 +2,19 @@
 
 import * as SelectPrimitive from '@radix-ui/react-select'
 import { ChevronDown } from 'lucide-react'
+import { ReactNode } from 'react'
 
 export interface SelectProps {
-  text?: string
+  children: ReactNode
+  placeholder: string
 }
 
-export function Select(props: SelectProps) {
+export function Select({ children, placeholder }: SelectProps) {
   return (
     <SelectPrimitive.Root>
       <SelectPrimitive.Trigger className="py2 flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 shadow-sm data-[placeholder]:text-zinc-600">
         <SelectPrimitive.Value
-          placeholder="Select a country..."
+          placeholder={placeholder}
           className="text-black"
         />
         <SelectPrimitive.Icon>
@@ -27,16 +29,7 @@ export function Select(props: SelectProps) {
           position="popper"
           sideOffset={8}
         >
-          <SelectPrimitive.Viewport>
-            <SelectPrimitive.Item
-              value="br"
-              className="flex items-center gap-2 px-3 py-2.5"
-            >
-              <SelectPrimitive.ItemText className="text-black">
-                Brazil
-              </SelectPrimitive.ItemText>
-            </SelectPrimitive.Item>
-          </SelectPrimitive.Viewport>
+          <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
         </SelectPrimitive.Content>
       </SelectPrimitive.Portal>
     </SelectPrimitive.Root>
