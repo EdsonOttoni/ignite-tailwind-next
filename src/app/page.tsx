@@ -1,7 +1,7 @@
 import SettingTabs from '@/components/SettingTabs'
 import { InputControl, InputPrefix, InputRoot } from '@/components/Input'
 import * as FileInput from '@/components/Form/FileInput'
-import { Mail } from 'lucide-react'
+import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
 import { Select } from '@/components/Select'
 import { SelectItem } from '@/components/Select/SelectItem'
 
@@ -140,6 +140,62 @@ export default function Home() {
                 Write a short introduction
               </span>
             </label>
+
+            <div className="space-y-3">
+              <div className="gap grid grid-cols-2">
+                <Select placeholder="">
+                  <SelectItem
+                    value="normal"
+                    defaultValue="normal"
+                    text="Normal"
+                  />
+                </Select>
+
+                <div className="flex items-center gap-1">
+                  <button
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                    type="button"
+                  >
+                    <Bold className="h-4 w-4 text-zinc-500" />
+                  </button>
+
+                  <button
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                    type="button"
+                  >
+                    <Italic className="h-4 w-4 text-zinc-500" />
+                  </button>
+
+                  <button
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                    type="button"
+                  >
+                    <Link className="h-4 w-4 text-zinc-500" />
+                  </button>
+
+                  <button
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                    type="button"
+                  >
+                    <List className="h-4 w-4 text-zinc-500" />
+                  </button>
+
+                  <button
+                    className="rounded-md p-2 hover:bg-zinc-50"
+                    type="button"
+                  >
+                    <ListOrdered className="h-4 w-4 text-zinc-500" />
+                  </button>
+                </div>
+              </div>
+              <textarea
+                className="min-h-[120px] w-full resize-y rounded-lg border border-zinc-300 px-3 py-2"
+                id="bio"
+                defaultValue={
+                  'lo Lorem ipsum dolor sit amet consectetur, adipisicing elit.'
+                }
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
