@@ -12,7 +12,7 @@ export interface SelectProps extends SelectPrimitive.SelectProps {
 export function Select({ children, placeholder, ...props }: SelectProps) {
   return (
     <SelectPrimitive.Root {...props}>
-      <SelectPrimitive.Trigger className="py2 flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 shadow-sm data-[placeholder]:text-zinc-600">
+      <SelectPrimitive.Trigger className="py2 flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 shadow-sm outline-none focus:border-violet-300 focus:ring-4 focus:ring-violet-100 data-[placeholder]:text-zinc-600">
         <SelectPrimitive.Value
           placeholder={placeholder}
           className="text-black"
@@ -24,7 +24,7 @@ export function Select({ children, placeholder, ...props }: SelectProps) {
 
       <SelectPrimitive.Portal>
         <SelectPrimitive.Content
-          className="animate-slideDownAndFade z-10 w-[--radix-select-trigger-width] rounded-lg border border-zinc-200 bg-white"
+          className="z-10 w-[--radix-select-trigger-width] animate-slideDownAndFade rounded-lg border border-zinc-200 bg-white"
           side="bottom"
           position="popper"
           sideOffset={8}
